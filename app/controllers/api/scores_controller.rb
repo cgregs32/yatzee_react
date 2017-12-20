@@ -3,7 +3,7 @@ class Api::ScoresController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @scores = Score.all.order(value: :desc)
+    render json: Scores.all_scores
   end
 
   # def create
@@ -22,7 +22,7 @@ class Api::ScoresController < ApplicationController
   def create
     @score = current_user.scores.create(score_params)
     if @score.save
-      render 'show'
+      render json: @score
     else
       json_error(@score)
     end

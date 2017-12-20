@@ -1,9 +1,13 @@
-import React from 'react'
-import {Segment} from 'semantic-ui-react'
-class ScoreCard extends React.Component {
-  render () {
-    return (
-      <Segment basic>ScoreCard</Segment>
+import React, { Component } from 'react';
+import ScoreSection from './ScoreSection';
+
+class ScoreCard extends Component {
+  render() {
+    return(
+      <div>
+        <ScoreSection label="Upper" />
+        <ScoreSection label="Lower" />
+      </div>
     )
   }
 }
